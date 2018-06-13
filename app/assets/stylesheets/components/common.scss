@@ -1,0 +1,13 @@
+.background {
+  z-index: -1;
+}
+
+.page__title {
+	text-align: center;
+	font-size: 40px;
+    padding: 30px;
+
+    @media only screen and (max-width: 600px) {
+        font-size: 30px;
+    }
+}

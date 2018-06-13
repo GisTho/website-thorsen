@@ -1,0 +1,22 @@
+.font__color-default {
+  color: #37aed5;
+}
+
+.font__navbar-item {
+  font-family: "MoonBold";
+  margin-left: 10px;
+  margin-right: 10px;
+
+  &:hover {
+    text-decoration: none;
+    color: #fca787;
+  }
+
+  &:active {
+    color: #f78386;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
