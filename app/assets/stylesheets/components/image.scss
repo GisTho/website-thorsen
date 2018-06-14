@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 .image__stretched-width {
   width: 100%;
   height: auto;
@@ -38,5 +40,9 @@
 .image--small {
   width: 50px;
   height: 50px;
-  padding: 5px;
+}
+
+.image__footer {
+  margin: 5px;
+  color: #f6ca7c;
 }

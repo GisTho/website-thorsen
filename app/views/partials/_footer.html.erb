@@ -1,10 +1,8 @@
 <footer class="footer">
   <div class="container--centered">
-        <span>
-          <%= link_to image_tag("https://imgur.com/QEROr4j.png", class: "image--small"), root_path %>
-        <span>
-        </span>
-          <%= link_to image_tag("https://imgur.com/BxJ8F0d.png", class: "image--small"), root_path %>
-        </span>
+    <%= link_to fa_stacked_icon("twitter", base: "square-o", class: "fa-2x image__footer"), "https://twitter.com/gislethor", :target => "_blank" %>
+    <%= link_to fa_stacked_icon("github", base: "square-o", class: "fa-2x image__footer"), "https://github.com/GisTho", :target => "_blank" %>
+    <%= link_to fa_stacked_icon("linkedin", base: "square-o", class: "fa-2x image__footer"), "https://www.linkedin.com/in/gisle-thorsen-289780112/?locale=en_US", :target => "_blank" %>
+    <%= link_to fa_stacked_icon("at", base: "square-o", class: "fa-2x image__footer"), "mailto:gisle@gislethorsen.com", :target => "_blank" %>
   </div>
 </footer>

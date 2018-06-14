@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require_tree .
 
-//= require grayscale
 //= require jquery
+//= require jquery_ujs
+//= require grayscale
 //= require bootstrap

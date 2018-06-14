@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'rake', '>= 12.3.0'
 gem 'bootstrap', '~> 4.1.1'
+gem "font-awesome-rails"
 gem 'jquery-rails'
 gem 'jquery-datatables-rails', '~> 3.4.0', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
