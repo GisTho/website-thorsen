@@ -19,21 +19,21 @@
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger">
             <div>
-                <%= link_to t('views.shared.button_home'), root_path, class: "font__color-default font__navbar-item" %>
+                <%= link_to t('views.shared.button_home'), root_path, class: "font__color-default font__navbar-item #{current_page(root_path)}" %>
             </div>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger">
             <div>
-                <%= link_to t('views.shared.button_projects'), projects_path, class: "font__color-default font__navbar-item" %>
+                <%= link_to t('views.shared.button_projects'), projects_path, class: "font__color-default font__navbar-item #{current_page(projects_path)}" %>
             </div>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger">
             <div>
-                <%= link_to t('views.shared.button_about'), about_path, class: "font__color-default font__navbar-item" %>
+                <%= link_to t('views.shared.button_about'), about_path, class: "font__color-default font__navbar-item #{current_page(about_path)}" %>
             </div>
           </a>
         </li>
