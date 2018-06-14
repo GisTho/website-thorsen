@@ -44,5 +44,14 @@
 
 .image__footer {
   margin: 5px;
-  color: #f6ca7c;
+  color: $primary;
+  text-shadow: 2px 2px $shadow;
+
+  &:hover {
+    color: $hover;
+  }
+
+  &:active {
+    color: $active;
+  }
 }
