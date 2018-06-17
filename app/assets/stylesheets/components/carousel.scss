@@ -1,0 +1,28 @@
+@import 'variables.scss';
+
+.carousel-control-highlight {
+  -webkit-filter: drop-shadow(1px 1px 3px black);
+  filter: drop-shadow(1px 1px 3px black);
+}
+
+.carousel-indicators-highlight {
+  padding: 1px;
+  -webkit-filter: drop-shadow(1px 1px 3px black);
+  filter: drop-shadow(1px 1px 3px black);
+  padding: 5px;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  background-color: #ffffff;
+  border: 1px solid $shadow;
+  border-radius: 10px;
+}
+
+.carousel-indicators .active {
+  margin: 1px;
+  padding: 5px;
+}
