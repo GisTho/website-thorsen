@@ -1,8 +1,19 @@
 @import 'variables.scss';
 
-.font__color-default {
-  color: $primary;
+.font__color-default-header {
+  color: $primary_header;
+}
+
+.font__color-default-data {
+  color: $primary_data;
+}
+
+.font__shadow-default {
   text-shadow: 3px 3px $shadow;
+}
+
+.font__shadow-small {
+  text-shadow: 1px 1px $shadow;
 }
 
 .font__navbar-item {
@@ -25,6 +36,13 @@
   }
 }
 
+.font--overflow-centered {
+  margin-left: -50%;
+  margin-right: -50%;
+  text-align: center;
+  white-space: nowrap;
+}
+
 .font__navbar-main-item {
   font-size: 35px;
   vertical-align: -45px;
@@ -32,4 +50,28 @@
 
 .font__navbar-item-underline {
   border-bottom: 3px solid;
+}
+
+.font__header {
+  font-family: "MoonLight";
+  font-size: 25px;
+}
+
+.font__header2 {
+  font-family: "ModernSansLight";
+  font-size: 25px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 20px;
+  }
+}
+
+.font__data-justified {
+  text-align: justify;
+  font-family: "ModernSansLight";
+  font-size: 18px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 }
