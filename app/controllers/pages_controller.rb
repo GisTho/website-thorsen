@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def projects
-    @projects = nil
+    @projects = Project.all
   end
 
   def about

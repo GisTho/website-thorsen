@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180617113640) do
+ActiveRecord::Schema.define(version: 20180617165758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,19 @@ ActiveRecord::Schema.define(version: 20180617113640) do
     t.text "data"
     t.bigint "author_id"
     t.index ["author_id"], name: "index_descriptions_on_author_id"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.text "caption"
+    t.string "source"
+    t.bigint "project_id"
+    t.index ["project_id"], name: "index_pictures_on_project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "source"
   end
 
   create_table "soft_skill_types", force: :cascade do |t|
@@ -49,6 +62,7 @@ ActiveRecord::Schema.define(version: 20180617113640) do
   end
 
   add_foreign_key "descriptions", "authors"
+  add_foreign_key "pictures", "projects"
   add_foreign_key "soft_skills", "soft_skill_types"
   add_foreign_key "technical_skills", "technical_skill_types"
 end
