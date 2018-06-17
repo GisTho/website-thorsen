@@ -1,0 +1,36 @@
+.table {
+  margin: auto;
+  background-color: transparent !important;
+
+  // Required to override default Bootstrap styles
+  td {
+      border: none !important;
+  }
+  tr {
+      border: none !important;
+  }
+}
+
+.table--large {
+  width: 100% !important;
+  table-layout: fixed;
+}
+
+.table__label {
+  text-align: center;
+  font-weight: normal;
+  border: none !important;
+
+  @media only screen and (max-width: 600px) {
+      font-size: 14px;
+  }
+}
+
+.table__data {
+  text-align: center;
+  border: none !important;
+
+  @media only screen and (max-width: 600px) {
+      font-size: 14px;
+  }
+}

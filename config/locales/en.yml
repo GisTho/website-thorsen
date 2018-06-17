@@ -36,3 +36,6 @@ en:
       button_home: "Home"
       button_about: "About"
       button_projects: "Projects"
+    about:
+      label_technical_skills: "Technical Skills"
+      label_soft_skills: "Other Skills"

@@ -1,3 +1,101 @@
-<%= render "partials/nav" %>
-<%= render "partials/footer" %>
 <%= render "partials/background" %>
+<%= render "partials/nav" %>
+
+<% if @author.present? %>
+  <div class="container__box container__box-small container__box-background container__box-borders">
+    <div>
+      <div class="font__header2 font__color-default-header font__shadow-small">
+        <%= @author.description.title.html_safe %>
+      </div>
+      <div class="font__data font__color-default-data font__data-justified">
+        <%= @author.description.data.html_safe %>
+      </div>
+    </div>
+  </div>
+
+  <% if @technical_skills.present? %>
+    <div class="container__box container__box-small container__box-background container__box-borders">
+    <div>
+      <div class="font__header2 font__color-default-header font__shadow-small">
+        <%= t('views.about.label_technical_skills') %>
+      </div>
+      <div class="font__data font__color-default-data font__data-justified">
+        <table class="table table--large">
+          <tr>
+            <% @technical_skills.each do |type, skills| %>
+              <% if type.present? %>
+                <td>
+                  <table class="table table--large">
+                    <tbody>
+                      <tr>
+                        <th class="table__label">
+                          <div class="font--overflow-centered font__color-default-header">
+                            <%= type.title %>
+                          </div>
+                        </th>
+                      </tr>
+                      <% skills.each do |skill| %>
+                        <tr>
+                          <td class="table__data">
+                            <div class="font--overflow-centered font__color-default-data">
+                              <%= skill.title %>
+                            </div>
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </td>
+              <% end %>
+            <% end %>
+          </tr>
+        </table>
+      </div>
+    </div>
+    </div>
+  <% end %>
+
+  <% if @soft_skills.present? %>
+    <div class="container__box container__box-small container__box-background container__box-borders">
+    <div>
+      <div class="font__header2 font__color-default-header font__shadow-small">
+        <%= t('views.about.label_soft_skills') %>
+      </div>
+      <div class="font__data font__color-default-data font__data-justified">
+        <table class="table table--large">
+          <tr>
+            <% @soft_skills.each do |type, skills| %>
+              <% if type.present? %>
+                <td>
+                  <table class="table table--large">
+                    <tbody>
+                      <tr>
+                        <th class="table__label">
+                          <div class="font--overflow-centered font__color-default-header">
+                            <%= type.title %>
+                          </div>
+                        </th>
+                      </tr>
+                      <% skills.each do |skill| %>
+                        <tr>
+                          <td class="table__data">
+                            <div class="font--overflow-centered font__color-default-data">
+                              <%= skill.title %>
+                            </div>
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </td>
+              <% end %>
+            <% end %>
+          </tr>
+        </table>
+      </div>
+    </div>
+    </div>
+  <% end %>
+<% end %>
+
+<%= render "partials/footer" %>
