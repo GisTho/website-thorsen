@@ -1,0 +1,13 @@
+@import 'variables.scss';
+
+.btn.btn-outline-light {
+  color: $primary_header;
+  background-color: #ffffff00;
+  border-color: $primary_header;
+
+  &:hover {
+    color: $hover;
+    background-color: #ffffff00;
+    border-color: $hover;
+  }
+}

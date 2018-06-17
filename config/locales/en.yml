@@ -39,3 +39,5 @@ en:
     about:
       label_technical_skills: "Technical Skills"
       label_soft_skills: "Other Skills"
+    project:
+      button_goto: "Go to Project"

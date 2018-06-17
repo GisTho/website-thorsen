@@ -1,0 +1,8 @@
+@import 'variables.scss';
+
+.card-img-top {
+  width: 100%;
+  height: 25vw;
+  object-fit: fill;
+  border-bottom: 5px solid $shadow;
+}

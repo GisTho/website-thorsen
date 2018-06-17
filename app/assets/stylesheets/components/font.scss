@@ -75,3 +75,9 @@
     font-size: 14px;
   }
 }
+
+.font__caption {
+  font-size: 20px;
+  text-shadow: 0 0 3px $shadow, 2px 2px 5px $shadow;
+  background-color: #262626b9;
+}

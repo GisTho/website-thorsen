@@ -25,6 +25,10 @@
   }
 }
 
+.container__box--no-padding {
+  padding: 0px;
+}
+
 .container__box-small {
   margin-left: 25%;
   margin-right: 25%;
@@ -47,4 +51,8 @@
 .container__box-borders {
   border-top: 5px solid $shadow;
   border-bottom: 5px solid $shadow;
+}
+
+.container__box-borders-full {
+  border: 5px solid $shadow;
 }
