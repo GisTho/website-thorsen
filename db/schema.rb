@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180617165758) do
+ActiveRecord::Schema.define(version: 20180625184424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20180617165758) do
 
   create_table "pictures", force: :cascade do |t|
     t.text "caption"
-    t.string "source"
+    t.text "source"
     t.bigint "project_id"
     t.index ["project_id"], name: "index_pictures_on_project_id"
   end
@@ -38,7 +38,11 @@ ActiveRecord::Schema.define(version: 20180617165758) do
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "source"
+    t.text "source"
+    t.string "url"
+    t.text "thumbnail"
+    t.text "short_description"
+    t.index ["url"], name: "index_projects_on_url", unique: true
   end
 
   create_table "soft_skill_types", force: :cascade do |t|
