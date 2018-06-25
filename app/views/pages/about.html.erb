@@ -4,7 +4,7 @@
 <% if @author.present? %>
   <div class="container__box container__box-small container__box-background container__box-borders">
     <div>
-      <div class="font__header2 font__color-default-header font__shadow-small">
+      <div class="font__header2 font__color-default-header font__shadow-small font__header--medium font--padding-bottom">
         <%= @author.description.title.html_safe %>
       </div>
       <div class="font__data font__color-default-data font__data-justified">
@@ -23,7 +23,7 @@
   <% if @technical_skills.present? %>
     <div class="container__box container__box-small container__box-background container__box-borders">
     <div>
-      <div class="font__header2 font__color-default-header font__shadow-small">
+      <div class="font__header2 font__color-default-header font__shadow-small font__header--medium">
         <%= t('views.about.label_technical_skills') %>
       </div>
       <div class="font__data font__color-default-data font__data-justified">
@@ -65,7 +65,7 @@
   <% if @soft_skills.present? %>
     <div class="container__box container__box-small container__box-background container__box-borders">
     <div>
-      <div class="font__header2 font__color-default-header font__shadow-small">
+      <div class="font__header2 font__color-default-header font__shadow-small font__header--medium">
         <%= t('views.about.label_soft_skills') %>
       </div>
       <div class="font__data font__color-default-data font__data-justified">
