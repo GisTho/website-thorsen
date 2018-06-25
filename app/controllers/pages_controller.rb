@@ -2,10 +2,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  def projects
-    @projects = Project.all
-  end
-
   def about
     @author = Author.find_by_id(1)
     if @author.present?

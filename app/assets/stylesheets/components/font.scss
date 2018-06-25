@@ -54,30 +54,65 @@
 
 .font__header {
   font-family: "MoonLight";
-  font-size: 25px;
 }
 
 .font__header2 {
   font-family: "ModernSansLight";
-  font-size: 25px;
+}
 
+.font__header--large {
+  font-size: 30px;
+  @media only screen and (max-width: 600px) {
+    font-size: 25px;
+  }
+}
+
+.font__header--medium {
+  font-size: 25px;
   @media only screen and (max-width: 600px) {
     font-size: 20px;
   }
 }
 
-.font__data-justified {
-  text-align: justify;
+.font__header--small {
+  font-size: 20px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 15px;
+  }
+}
+
+.font__data {
   font-family: "ModernSansLight";
   font-size: 18px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 16px;
+  }
+}
+
+.font__data--small {
+  font-size: 16px;
 
   @media only screen and (max-width: 600px) {
     font-size: 14px;
   }
 }
 
+.font__data-justified {
+  text-align: justify;
+}
+
 .font__caption {
   font-size: 20px;
   text-shadow: 0 0 3px $shadow, 2px 2px 5px $shadow;
   background-color: #262626b9;
+}
+
+.font--padding {
+  padding: 15px;
+}
+
+.font--padding-bottom {
+  padding-bottom: 15px;
 }
