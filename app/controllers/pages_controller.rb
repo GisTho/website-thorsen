@@ -3,6 +3,8 @@ class PagesController < ApplicationController
   end
 
   def about
+    @resume = "https://drive.google.com/file/d/1ECaEsJsj0dzmykjCtneWKFpTuvLNP6fM/view?usp=sharing"
+
     @author = Author.find_by_id(1)
     if @author.present?
       @technical_skills = {}

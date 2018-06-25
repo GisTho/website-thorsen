@@ -13,6 +13,13 @@
     </div>
   </div>
 
+  <div class="container__box container__box-small container__box--no-padding">
+    <form action="<%= @resume %>" target="_blank" class="btn btn-outline-light btn--font-large button--background">
+      <i class="fa fa-id-card"></i>
+      <input type="submit" value="View Resume" class="button__container"/>
+    </form>
+  </div>
+
   <% if @technical_skills.present? %>
     <div class="container__box container__box-small container__box-background container__box-borders">
     <div>
