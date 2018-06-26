@@ -12,5 +12,12 @@
 //
 //= require_tree .
 //= require jquery
+//= require best_in_place
+
 //= require rails-ujs
 //= require bootstrap
+
+$(document).ready(ready);
+function ready() {
+    jQuery(".best_in_place").best_in_place();
+}
