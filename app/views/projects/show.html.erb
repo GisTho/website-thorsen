@@ -60,10 +60,25 @@
 <div class="container__box container__box-small container__box-background container__box-borders-full container__box--no-padding">
   <div class="card-body">
     <div class="font__header2 font__header--large font__color-default-header font__shadow-small font--padding-bottom">
-      <%= @project.title if @project.title.present? %>
+      <h1>
+        <%= @project.title if @project.title.present? %>
+        <a href="#" id="activator-description" class="button--right-align">
+          <i class="fa fa-edit"></i>
+        </a>
+      </h1>
     </div>
     <div class="font__data font__color-default-data font__data-justified">
-      <%= @project.description.html_safe if @project.description.present? %>
+      <%= best_in_place @project,
+            :description,
+            as: :textarea,
+            skip_blur: true,
+            ok_button: 'Save',
+            ok_button_class: "btn btn-outline-success button--padding",
+            cancel_button: 'Cancel',
+            cancel_button_class: "btn btn-outline-danger button--padding",
+            inner_class: "bip__textarea",
+            :activator => "#activator-description",
+            display_with: lambda { |t| markdown(t) } %>
     </div>
   </div>
 </div>
