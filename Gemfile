@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'devise'
 gem 'rake', '>= 12.3.0'
 gem 'bootstrap', '~> 4.1.1'
 gem "font-awesome-rails"

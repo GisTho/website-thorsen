@@ -37,6 +37,17 @@
             </div>
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger">
+            <div>
+                <% if user_signed_in? %>
+                  <%= link_to t('views.shared.button_logout'), logout_path, :method => :delete, class: "font__color-default-header font__shadow-default font__navbar-item #{current_page(login_path)}" %>
+                <% else %>
+                  <%= link_to t('views.shared.button_login'), login_path, class: "font__color-default-header font__shadow-default font__navbar-item #{current_page(login_path)}" %>
+                <% end %>
+            </div>
+          </a>
+        </li>
       </ul>
     </div>
   </div>

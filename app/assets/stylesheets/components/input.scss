@@ -1,0 +1,30 @@
+@import 'variables.scss';
+
+.input__data-centered {
+  text-align: center;
+}
+
+.input[type=email], select {
+  background-color : #d1d1d1;
+}
+
+.input--padding-bottom {
+  padding-bottom: 10px;
+}
+
+.input--background {
+  color: $primary_data !important;
+  background-color : $input_bg !important;
+  border: 1px solid $shadow !important;
+}
+
+.input--background::placeholder {
+  color: $input_font_placeholder !important;
+}
+
+.input--background:-webkit-autofill,
+.input--background:-webkit-autofill:hover,
+.input--background:-webkit-autofill:focus {
+  -webkit-text-fill-color: $primary_data;
+  -webkit-box-shadow: 0 0 0 50px $input_bg inset;
+}

@@ -3,3 +3,8 @@ rvm:
 - 2.2
 services:
   - postgresql
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rspec
+before_script:
+  - psql -c 'create database website_thorsen_test;' -U postgres
