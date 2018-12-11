@@ -27,6 +27,15 @@
   cursor: pointer;
 }
 
+.button__container--text-small {
+  width: 11em !important;
+  font-size: 16px;
+}
+
+.button__container--margin {
+  margin: 10px !important;
+}
+
 .button--background {
   background-color: $jumbotron !important;
 }
