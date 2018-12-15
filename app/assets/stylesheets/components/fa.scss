@@ -1,0 +1,32 @@
+.fa-stack {
+  position: relative;
+  display: inline-block;
+  width: 2.25em !important;
+  height: 2.25em !important;
+  line-height: 2.25em !important;
+  vertical-align: middle;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.fa-stack-1x {
+  line-height: inherit;
+}
+
+.fa-stack-2x {
+  font-size: 2.25em !important;
+}
+
+.fa-2x {
+  font-size: 1.75em !important;
+}
+
+.fa-footer {
+  font-size: 2.5em !important;
+}
