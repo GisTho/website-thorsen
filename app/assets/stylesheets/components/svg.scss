@@ -1,0 +1,19 @@
+@import 'variables.scss';
+
+.svg {
+  vertical-align: -0%;
+  width: .8em;
+  height: .8em;
+}
+
+.svg__button {
+  fill: $primary_header;
+
+  &:hover {
+    fill: $hover;
+  }
+
+  &:active {
+    fill: $active;
+  }
+}

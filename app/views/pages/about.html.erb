@@ -5,10 +5,32 @@
   <div class="container__box container__box-small container__box-background container__box-borders">
     <div>
       <div class="font__header2 font__color-default-header font__shadow-small font__header--medium font--padding-bottom">
-        <%= @author.description.title.html_safe %>
+        <%=
+          best_in_place_if isEditable,
+          @author.description,
+          :title
+        %>
+        <% if isEditable %>
+          <a href="#" id="activator-description" class="button--right-align">
+            <i class="fa fa-edit"></i>
+          </a>
+        <% end %>
       </div>
       <div class="font__data font__color-default-data font__data-left">
-        <%= @author.description.data.html_safe %>
+        <%=
+          best_in_place_if isEditable,
+          @author.description,
+          :data,
+          as: :textarea,
+          skip_blur: true,
+          ok_button: 'Save',
+          ok_button_class: "btn btn-outline-success button--padding",
+          cancel_button: 'Cancel',
+          cancel_button_class: "btn btn-outline-danger button--padding",
+          inner_class: "bip__textarea",
+          :activator => "#activator-description",
+          display_with: lambda { |t| markdown(t) }
+        %>
       </div>
     </div>
   </div>
@@ -16,7 +38,7 @@
   <div class="container__box container__box-small container__box--no-padding">
     <form action="<%= @resume %>" target="_blank" class="btn btn-outline-light btn--font-large button--background">
       <i class="fa fa-id-card"></i>
-      <input type="submit" value="View Resume" class="button__container"/>
+      <input type="submit" value="<%= t('views.about.button_view_resume') %>" class="button__container button__container--width-large"/>
     </form>
   </div>
 

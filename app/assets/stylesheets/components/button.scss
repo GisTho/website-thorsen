@@ -27,6 +27,14 @@
   cursor: pointer;
 }
 
+.button__container--width-medium {
+  width: 12em !important;
+}
+
+.button__container--width-large {
+  width: 17em !important;
+}
+
 .button__container--text-small {
   width: 11em !important;
   font-size: 16px;
