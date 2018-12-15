@@ -31,6 +31,12 @@
 
 en:
   author: "Gisle Thorsen"
+  links:
+    jottacloud: "https://www.jottacloud.com/s/114ed325ee544ef428cbc959350c67650e7"
+    discord: "https://discord.gg/cCMuVPr"
+    linkedin: "https://www.linkedin.com/in/gisle-thorsen-289780112/?locale=en_US"
+    github: "https://github.com/GisTho"
+    email: "mailto:gisle@gislethorsen.com"
   views:
     shared:
       button_home: "Home"
@@ -41,5 +47,6 @@ en:
     about:
       label_technical_skills: "Technical Skills"
       label_soft_skills: "Other Skills"
+      button_view_resume: "View CV & Related Documents"
     project:
       button_goto: "Go to Project"

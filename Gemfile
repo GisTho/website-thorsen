@@ -35,10 +35,14 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'rake', '>= 12.3.0'
 gem 'best_in_place', github: 'bernat/best_in_place'
+
+# Visual Assistance
 gem 'redcarpet'
 gem 'pygments.rb'
 gem 'bootstrap', '~> 4.1.1'
 gem 'font-awesome-sass', '~> 5.5.0'
+gem 'inline_svg'
+
 gem 'jquery-rails'
 gem 'jquery-datatables-rails', '~> 3.4.0', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
