@@ -5,7 +5,10 @@ Rails.application.routes.draw do
     delete "logout", to: "devise/sessions#destroy"
   end
 
-  resources :projects
+  resources :projects do
+    get "add_picture", to: "projects#add_picture"
+  end
+  resources :pictures
 
   root "pages#home"
   get "about" => "pages#about"

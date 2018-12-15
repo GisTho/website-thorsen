@@ -1,5 +1,6 @@
 module ApplicationHelper
   def markdown(content)
+    return if content.nil?
     renderer = CustomRedcarpetHTML.new(hard_wrap: true, filter_html: true, safe_links_only: true)
     options = {
       tables: true,

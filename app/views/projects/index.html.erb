@@ -5,41 +5,59 @@
   <div class="container__box container__box-small">
     <div class="card-columns">
       <% @projects.each do |project| %>
-        <div class="card card--background">
-          <% if project.thumbnail.present? %>
-            <img class="card-img-top" src="<%= project.thumbnail %>" alt="Card image cap">
-          <% end %>
-          <div class="card-body">
-            <div class="font__header2 font__header--small font__color-default-header font__shadow-small font--padding-bottom">
-              <%= project.title if project.title.present? %>
+        <% if isEditable || !project.hidden %>
+          <div class="card card--background">
+            <% if project.thumbnail.present? %>
+              <img class="card-img-top" src="<%= project.thumbnail %>" alt="Card image cap">
+            <% end %>
+            <div class="card-body">
+              <div class="font__header2 font__header--small font__color-default-header font__shadow-small font--padding-bottom">
+                <%= ("#{project.title}#{project.hidden ? "<br>**CURRENTLY HIDDEN**" : ""}").html_safe if project.title.present? %>
+              </div>
+              <div class="font__data font__data--small font__color-default-data font__data-left">
+                <%= markdown(project.short_description) if project.short_description.present? %>
+              </div>
             </div>
-            <div class="font__data font__data--small font__color-default-data font__data-justified">
-              <%= project.short_description.html_safe if project.short_description.present? %>
-            </div>
-          </div>
-          <div style="padding: 5px;">
-            <form action="<%= project_path(project) %>" class="btn btn-outline-light">
-              <i class="fa fa-search"></i>
-              <input type="submit" value="Read More" class="button__container"/>
-            </form>
-          </div>
-          <% if project.source.present? %>
             <div style="padding: 5px;">
-              <form action="<%= project.source %>" target="_blank" class="btn btn-outline-light">
-                <i class="fa fa-folder"></i>
-                <input type="submit" value="Go to Source" class="button__container"/>
+              <form action="<%= project_path(project) %>" class="btn btn-outline-light">
+                <i class="fa fa-search"></i>
+                <input type="submit" value="Read More" class="button__container"/>
               </form>
             </div>
-          <% end %>
-          <% if false %>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          <% else %>
-            <br>
-          <% end %>
-        </div>
+            <% if project.source.present? %>
+              <div style="padding: 5px;">
+                <form action="<%= project.source %>" target="_blank" class="btn btn-outline-light">
+                  <i class="fa fa-folder"></i>
+                  <input type="submit" value="Go to Source" class="button__container"/>
+                </form>
+              </div>
+            <% end %>
+            <% if isEditable %>
+              <div style="padding: 5px;">
+                <form action="<%= edit_project_path(project) %>" class="btn btn-outline-light">
+                  <i class="fa fa-edit"></i>
+                  <input type="submit" value="Edit Details" class="button__container"/>
+                </form>
+              </div>
+            <% end %>
+            <% if false %>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            <% else %>
+              <br>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
+
+      <% if isEditable %>
+        <form action="<%= projects_path %>" method="post" class="btn btn-outline-light">
+          <i class="fa fa-plus"></i>
+          <input type="submit" value="Add Project" class="button__container"/>
+        </form>
+      <% end %>
+
     </div>
   </div>
 <% end %>

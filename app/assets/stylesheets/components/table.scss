@@ -1,13 +1,14 @@
-.table {
-  margin: auto;
-  background-color: transparent !important;
+@import 'variables.scss';
 
+table {
+  background-color: transparent !important;
   // Required to override default Bootstrap styles
-  td {
-      border: none !important;
+  td, tr, th {
+    padding: 5px 15px 5px 15px !important;
   }
-  tr {
-      border: none !important;
+
+  td, tr {
+    border: none !important;
   }
 }
 

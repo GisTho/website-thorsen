@@ -19,5 +19,7 @@
 
 $(document).ready(ready);
 function ready() {
-    jQuery(".best_in_place").best_in_place();
+    try {
+        jQuery(".best_in_place").best_in_place();
+    } catch (err) {}
 }

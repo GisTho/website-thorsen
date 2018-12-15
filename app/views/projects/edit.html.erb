@@ -1,0 +1,94 @@
+<%= render "partials/background" %>
+<%= render "partials/nav" %>
+
+<div class="container__box container__box-extra-small container__box-background container__box-borders">
+  <%= form_for @project do |item| %>
+    <div class="form-group container__div--centered font__data font__color-default-data">
+      <%=
+        best_in_place @project,
+        :hidden,
+        as: :checkbox,
+        collection: {false: "Click to Hide (Showing)", true: "Click to Show (Hidden)"}
+      %><br>
+    </div>
+
+    <div class="form-group container__div--centered">
+      <%= item.label "Title", class: "font__data font__color-default-data" %>
+      <%= item.text_field :title, class: "form-control input__data-centered input--background", autocomplete: "false" %><br>
+    </div>
+
+    <div class="form-group container__div--centered">
+      <%= item.label "URL", class: "font__data font__color-default-data" %>
+      <%= item.text_field :url, class: "form-control input__data-centered input--background", autocomplete: "false" %><br>
+    </div>
+
+    <div class="form-group container__div--centered">
+      <%= item.label "Source URL", class: "font__data font__color-default-data" %>
+      <%= item.text_field :source, class: "form-control input__data-centered input--background", autocomplete: "false" %><br>
+    </div>
+
+    <div class="form-group container__div--centered">
+      <%= item.label "Thumbnail URL", class: "font__data font__color-default-data" %>
+      <%= item.text_field :thumbnail, class: "form-control input__data-centered input--background", autocomplete: "false" %><br>
+    </div>
+
+    <div class="btn btn-outline-light btn--font-large button--background button__container--margin">
+      <input type="submit" value="Update" class="button__container button__container--text-small">
+    </div>
+    <br><br><br><br>
+  <% end %>
+
+  <div class="form-group container__div--centered">
+    <%= label_tag "", "Card Description",class: "font__data font__color-default-data" %>
+  </div>
+  <div class="font__data font__color-default-data">
+    <%=
+      best_in_place @project,
+      :short_description,
+      as: :textarea,
+      skip_blur: true,
+      ok_button: 'Save',
+      ok_button_class: "btn btn-outline-success button--padding",
+      cancel_button: 'Cancel',
+      cancel_button_class: "btn btn-outline-danger button--padding",
+      inner_class: "bip__textarea",
+      display_with: lambda { |t| markdown(t) }
+    %>
+  </div>
+
+  <br><br>
+  <div class="form-group container__div--centered">
+    <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+      <%= label_tag "", "Carousel-Pictures", id: "Carousel-Pictures", class: "font__data font__color-default-data" %>
+    </div>
+  </div>
+  <% @project.try(:pictures).each do |item| %>
+    <hr>
+    <div class="form-group container__div--centered font__color-default-data">
+      <%= label_tag "", "URL: ", class: "" %>
+      <%=
+        best_in_place item,
+        :source
+      %>
+    </div>
+    <div class="font__data font__color-default-data">
+      <%=
+        best_in_place item,
+        :caption,
+        as: :textarea,
+        skip_blur: true,
+        ok_button: 'Save',
+        ok_button_class: "btn btn-outline-success button--padding",
+        cancel_button: 'Cancel',
+        cancel_button_class: "btn btn-outline-danger button--padding",
+        inner_class: "bip__textarea",
+        display_with: lambda { |t| markdown(t) }
+      %>
+    </div>
+    <%= link_to "Delete", picture_path(item), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+  <br>
+  <%= link_to "Add Another Picture to Carousel", project_add_picture_path(@project) %>
+</div>
+
+<%= render "partials/footer" %>
