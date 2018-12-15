@@ -7,7 +7,7 @@
       <div class="font__header2 font__color-default-header font__shadow-small font__header--medium font--padding-bottom">
         <%= @author.description.title.html_safe %>
       </div>
-      <div class="font__data font__color-default-data font__data-justified">
+      <div class="font__data font__color-default-data font__data-left">
         <%= @author.description.data.html_safe %>
       </div>
     </div>
@@ -26,7 +26,7 @@
       <div class="font__header2 font__color-default-header font__shadow-small font__header--medium">
         <%= t('views.about.label_technical_skills') %>
       </div>
-      <div class="font__data font__color-default-data font__data-justified">
+      <div class="font__data font__color-default-data font__data-left">
         <table class="table table--large">
           <tr>
             <% @technical_skills.each do |type, skills| %>
@@ -68,7 +68,7 @@
       <div class="font__header2 font__color-default-header font__shadow-small font__header--medium">
         <%= t('views.about.label_soft_skills') %>
       </div>
-      <div class="font__data font__color-default-data font__data-justified">
+      <div class="font__data font__color-default-data font__data-left">
         <table class="table table--large">
           <tr>
             <% @soft_skills.each do |type, skills| %>
