@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get "add_picture", to: "projects#add_picture"
   end
   resources :pictures
+  resources :descriptions
 
   root "pages#home"
   get "about" => "pages#about"
