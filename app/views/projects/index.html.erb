@@ -2,13 +2,13 @@
 <%= render "partials/nav" %>
 
 <% if @projects.present? %>
-  <div class="container__box container__box-small">
+  <div class="container__box container__box-medium">
     <div class="card-columns">
       <% @projects.each do |project| %>
         <% if isEditable || !project.hidden %>
           <div class="card card--background">
             <% if project.thumbnail.present? %>
-              <img class="card-img-top" src="<%= project.thumbnail %>" alt="Card image cap">
+              <img class="card-img-top card-img-top--medium" src="<%= project.thumbnail %>" alt="Card image cap">
             <% end %>
             <div class="card-body">
               <div class="font__header2 font__header--small font__color-default-header font__shadow-small font--padding-bottom">
